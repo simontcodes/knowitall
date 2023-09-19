@@ -3,8 +3,11 @@ import Link from "next/link";
 import React from "react";
 import SignInButton from "./SignInButton";
 import UserAccountNav from "./UserAccountNav";
+import { ThemeToggle } from "./ThemeToggle";
 
-const NavBar = async () => {
+type Props = {};
+
+const NavBar = async (props: Props) => {
   const session = await getAuthSession();
   console.log(session?.user);
   return (
@@ -16,9 +19,16 @@ const NavBar = async () => {
             KNOW IT ALL
           </p>
         </Link>
-
         <div className="flex items-center">
-          {session?.user ? <UserAccountNav /> : <SignInButton text="Sign In" />}
+          <ThemeToggle className="mr-4" />
+
+          <div className="flex items-center">
+            {session?.user ? (
+              <UserAccountNav user={session.user} />
+            ) : (
+              <SignInButton text="Sign In" />
+            )}
+          </div>
         </div>
       </div>
     </div>
