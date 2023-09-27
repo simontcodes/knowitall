@@ -6,6 +6,7 @@ import { Roboto } from "next/font/google";
 import { cn } from "@/lib/utils";
 import NavBar from "@/components/NavBar";
 import Providers from "@/components/ui/Providers";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Providers>
           <NavBar />
           {children}
+          <Toaster />
         </Providers>
       </body>
     </html>
