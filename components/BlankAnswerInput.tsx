@@ -4,7 +4,7 @@ import { Input } from "postcss";
 
 type Props = {
 	answer: string;
-    setBlankAnswer: React.Dispatch<React.SetStateAction<string>>
+	setBlankAnswer: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const BLANKS = "_____";
@@ -37,7 +37,7 @@ const BlankAnswerInput = ({ answer, setBlankAnswer }: Props) => {
 		const answerWithBlanks = keywords.reduce((acc, keyword) => {
 			return acc.replace(keyword, BLANKS);
 		}, answer); // <-- Provide 'answer' as the initial value
-        setBlankAnswer(answerWithBlanks)
+		setBlankAnswer(answerWithBlanks);
 		return answerWithBlanks;
 	}, [keywords, answer]);
 
@@ -46,12 +46,11 @@ const BlankAnswerInput = ({ answer, setBlankAnswer }: Props) => {
 	return (
 		<div className=" flex justify-start w-full mt-4">
 			<h1 className=" text-xl font-semibold">
-				{answer}
 				{answerWithBlanks.split(BLANKS).map((part, index, array) => {
 					return (
 						<>
 							{part}
-                            {/* this conditional is there so we dont put another input after the end of the sentence */}
+							{/* this conditional is there so we dont put another input after the end of the sentence */}
 							{index < array.length - 1 && (
 								<input
 									className="text-center border-b-2 border-black dark:border-white w-28 focus:border-2 focus:border-b-4 focus:outline-none"
