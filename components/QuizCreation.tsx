@@ -42,6 +42,7 @@ const QuizCreation = ({topicParam}: QuizCreationProps) => {
 	const [finished, setFinished] = React.useState(false);
 	const { mutate: getQuestions, isLoading } = useMutation({
 		mutationFn: async ({ amount, topic, type }: Input) => {
+			console.log(amount, topic, type)
 			const response = await axios.post(`/api/game`, {
 				amount,
 				topic,
