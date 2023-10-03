@@ -47,7 +47,6 @@ const QuizCreation = ({topicParam}: QuizCreationProps) => {
 				topic,
 				type,
 			});
-			console.log(response.data);
 			return response.data;
 		},
 	});

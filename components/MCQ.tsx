@@ -10,6 +10,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { z } from "zod";
 import { checkAnswerSchema } from "@/schemas/form/quiz";
+import { endGameSchema } from "@/schemas/questions";
 import { useToast } from "@/components/ui/use-toast";
 import Link from "next/link";
 import { cn, formatTimeDelta } from "@/lib/utils";
@@ -58,7 +59,17 @@ const MCQ = ({ game }: Props) => {
 		},
 	});
 
-	console.log(questionIndex);
+	//this function sends endTime to the endGame endpoint
+	const { mutate: endGame } = useMutation({
+		mutationFn: async () => {
+			const payload: z.infer<typeof endGameSchema> = {
+				gameId: game.id,
+			};
+			const response = await axios.post(`/api/endGame`, payload);
+			return response.data;
+		},
+	});
+
 	const handleNext = React.useCallback(() => {
 		if (isChecking) return;
 		checkAnswer(undefined, {
@@ -82,6 +93,7 @@ const MCQ = ({ game }: Props) => {
 
 				setQuestionIndex((prevIndex) => {
 					if (prevIndex === game.questions.length - 1) {
+						endGame();
 						setHasEnded(true);
 						return prevIndex + 1; // Keep the index the same
 					}
@@ -89,7 +101,7 @@ const MCQ = ({ game }: Props) => {
 				});
 			},
 		});
-	}, [checkAnswer, toast, isChecking, game.questions.length]);
+	}, [checkAnswer, toast, isChecking, game.questions.length, endGame]);
 
 	React.useEffect(() => {
 		const eventListener = (e: KeyboardEvent) => {

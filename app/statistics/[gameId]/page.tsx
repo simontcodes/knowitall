@@ -24,28 +24,27 @@ const StatisticsPage = async ({ params: { gameId } }: StatisticsPageProps) => {
 
 	const game = await prisma.game.findUnique({
 		where: { id: gameId },
-		include: {questions: true}
+		include: { questions: true },
 	});
 	if (!game) {
 		return redirect("/quiz");
 	}
 
-	let accuracy: number = 0
-	if (game.gameType === 'mcq') {
+	let accuracy: number = 0;
+	if (game.gameType === "mcq") {
 		let totalCorrect = game.questions.reduce((acc, question) => {
-			if(question.isCorrect) {
-				return acc + 1
+			if (question.isCorrect) {
+				return acc + 1;
 			}
-			return acc
-		}, 0)
-		accuracy = (totalCorrect/ game.questions.length) *100
-	} else if(game.gameType === "open_ended") {
+			return acc;
+		}, 0);
+		accuracy = (totalCorrect / game.questions.length) * 100;
+	} else if (game.gameType === "open_ended") {
 		let totalPercentage: number = game.questions.reduce((acc, question) => {
-			return acc + (question.percentageCorrect || 0)
-		}, 0)
-		accuracy = (totalPercentage / game.questions.length) * 100
+			return acc + (question.percentageCorrect || 0);
+		}, 0);
+		accuracy = (totalPercentage / game.questions.length) * 100;
 	}
-
 
 	return (
 		<div className=" p-8 mx-auto max-w-7xl">
@@ -64,7 +63,10 @@ const StatisticsPage = async ({ params: { gameId } }: StatisticsPageProps) => {
 				{/* Accuracy Card  */}
 				<AccuracyCard accuracy={accuracy} />
 				{/* Time taken Card */}
-				<TimeTakenCard timeEnded={new Date()} timeStarted={game.timeStarted} />
+				<TimeTakenCard
+					timeEnded={game.timeEnded as any}
+					timeStarted={game.timeStarted}
+				/>
 			</div>
 
 			{/* Question List */}

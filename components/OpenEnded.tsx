@@ -13,6 +13,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import BlankAnswerInput from "./BlankAnswerInput";
 import Link from "next/link";
+import { endGameSchema } from "@/schemas/questions";
 
 type Props = {
 	game: Game & { questions: Pick<Question, "id" | "question" | "answer">[] };
@@ -37,6 +38,17 @@ const OpenEnded = ({ game }: Props) => {
 			clearInterval(interval);
 		};
 	}, [hasEnded]);
+
+	//this function submits the endTime to the endGame route
+	const { mutate: endGame } = useMutation({
+		mutationFn: async () => {
+			const payload: z.infer<typeof endGameSchema> = {
+				gameId: game.id,
+			};
+			const response = await axios.post(`/api/endGame`, payload);
+			return response.data;
+		},
+	});
 
 	const currentQuestion = React.useMemo(() => {
 		return game.questions[questionIndex];
@@ -75,6 +87,7 @@ const OpenEnded = ({ game }: Props) => {
 
 				setQuestionIndex((prevIndex) => {
 					if (prevIndex === game.questions.length - 1) {
+						endGame();
 						setHasEnded(true);
 						return prevIndex + 1; // Keep the index the same
 					}
@@ -82,14 +95,13 @@ const OpenEnded = ({ game }: Props) => {
 				});
 			},
 			onError: (error) => {
-				console.error(error);
 				toast({
 					title: "Something went wrong",
 					variant: "destructive",
 				});
 			},
 		});
-	}, [checkAnswer, toast, isChecking, game.questions.length]);
+	}, [checkAnswer, toast, isChecking, game.questions.length, endGame]);
 
 	React.useEffect(() => {
 		const eventListener = (e: KeyboardEvent) => {
@@ -139,10 +151,6 @@ const OpenEnded = ({ game }: Props) => {
 						{formatTimeDelta(differenceInSeconds(now, game.timeStarted))}
 					</div>
 				</div>
-				{/* <MCQCounter
-					correctAnswers={correctAnswers}
-					wrongAnswers={wrongAnswers}
-				/> */}
 			</div>
 
 			{/* Question */}

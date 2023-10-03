@@ -27,9 +27,8 @@ const BlankAnswerInput = ({ answer, setBlankAnswer }: Props) => {
 			return_changed_case: false,
 			remove_duplicates: false,
 		});
-		console.log(words);
+
 		const shuffled = shuffleArray(words);
-		console.log(shuffled);
 		return shuffled.slice(0, 2);
 	}, [answer]);
 
