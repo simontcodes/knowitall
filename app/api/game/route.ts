@@ -35,8 +35,6 @@ export async function POST(req: Request, res: Response) {
 			},
 		});
 
-		console.log(game)
-
         await prisma.topic_count.upsert({
             where: {
               topic,
@@ -61,6 +59,8 @@ export async function POST(req: Request, res: Response) {
 				type,
 			}
 		);
+
+		console.log(data)
 
 		if (type === "mcq") {
 			type mcqQuestion = {
