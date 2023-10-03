@@ -8,7 +8,9 @@ import axios from "axios";
 // /api/game
 
 export async function POST(req: Request, res: Response) {
+	
 	try {
+		console.log(req)
 		const session = await getAuthSession();
 
 		if (!session?.user) {
