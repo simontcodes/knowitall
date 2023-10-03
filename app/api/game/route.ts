@@ -10,7 +10,6 @@ import axios from "axios";
 export async function POST(req: Request, res: Response) {
 	
 	try {
-		console.log(req)
 		const session = await getAuthSession();
 
 		if (!session?.user) {
@@ -23,6 +22,7 @@ export async function POST(req: Request, res: Response) {
 		}
 
 		const body = await req.json();
+		console.log(body)
 
 		const { amount, topic, type } = quizCreationSchema.parse(body);
 
