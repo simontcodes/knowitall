@@ -44,8 +44,8 @@ Provide instructions for setting up and using your project.
 $ git clone https://github.com/simontcodes/knowitall.git
 $ cd knowitall
 $ npm install
+```
 
----
 ### Usage <a name="usage"></a>
 
 ```bash
