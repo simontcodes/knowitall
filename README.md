@@ -36,8 +36,6 @@ Whether you're here for the quiz, the tech, or both, we hope you enjoy your time
 
 ## Getting Started <a name="getting-started"></a>
 
-Provide instructions for setting up and using your project.
-
 ### Installation <a name="installation"></a>
 
 
