@@ -26,6 +26,6 @@ List step-by-step instructions on how to install your project. Include any prere
 
 ```bash
 # Example installation steps
-$ git clone [https://github.com/yourusername/yourproject.git](https://github.com/simontcodes/knowitall.git)https://github.com/simontcodes/knowitall.git
+$ git clone https://github.com/simontcodes/knowitall.git
 $ cd yourproject
 $ npm install
