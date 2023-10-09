@@ -1,5 +1,7 @@
 # Know It All!
-![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonduck.com%2Ficons%2F11295%2Fnext-js&psig=AOvVaw2yBqk9FBcElHL7T9GHWRZ_&ust=1696964269939000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNCPyo7g6YEDFQAAAAAdAAAAABAE) "Logo Title Text 1")
+![alt text][logo]
+
+[logo]: https://static-00.iconduck.com/assets.00/next-js-icon-256x256-6j7ddke7.png "Logo Title Text 2"
 
 ## Table of Contents
 1. [Introduction](#introduction)
