@@ -82,5 +82,21 @@ Explore a curated selection of popular topics available on the platform. Challen
 Keep track of your quiz history, including the results, date, and time it took to complete. This feature allows you to monitor your progress and revisit past quizzes.
 
 
+## Libraries and Frameworks
+
+- **[Next.js](https://nextjs.org/)**: Next.js was chosen for its capability to seamlessly develop both the front and back end in one environment. Its server-side rendering capabilities ensure a smooth user experience.
+
+- **[TypeScript](https://www.typescriptlang.org/)**: TypeScript was implemented to enhance code quality and reduce potential errors and bugs. Its static typing system provides a robust foundation for development.
+
+- **[Tailwind CSS](https://tailwindcss.com/)**: Tailwind CSS, a utility-first CSS framework, was utilized to expedite the process of building modern websites. This framework enables the production of high-quality code in a more efficient manner.
+
+- **[Prisma](https://www.prisma.io/)**: Prisma serves as a server-side library, streamlining the process of reading and writing data to the database. Its intuitive, efficient, and secure features enhance database interactions. Additionally, Prisma seamlessly connects to PlanetScale, the chosen hosting solution for the database.
+
+- **[OpenAI API](https://openai.com/)**: The OpenAI API, a paid service, enables interaction with various AI models such as ChatGPT3.5, ChatGPT4, and more. It provides the ability to efficiently query the AI models, adding dynamic and intelligent functionality to the application.
+
+For additional libraries and dependencies, refer to the `package.json` file in the project repository.
+
+
+
 
 
