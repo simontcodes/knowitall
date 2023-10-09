@@ -52,6 +52,35 @@ $ npm install
 ```bash
 # Example usage
 $ npm run dev
+```
+
+
+## Features
+
+### 1. Multiple Choice Questions
+
+Enjoy a variety of multiple-choice questions generated dynamically by the OpenAI API. Test your knowledge on a wide range of topics and choose the correct answer from the provided options.
+
+### 2. Open-Ended Questions
+
+Dive deeper into your chosen topic with thought-provoking open-ended questions. These questions encourage critical thinking and allow for more nuanced responses.
+
+### 3. Personalized Quiz Configuration
+
+Tailor your quiz-taking experience by specifying the topic and the number of questions you want to tackle. **Know It All!** fetches relevant questions from the OpenAI API based on your preferences.
+
+### 4. Results Table
+
+After completing a quiz, receive detailed feedback in the form of a results table. This table provides an overview of your performance, including the number of correct answers and a percentage score.
+
+### 5. Popular Topics
+
+Explore a curated selection of popular topics available on the platform. Challenge yourself and see how well you know these widely-discussed subjects.
+
+### 6. Quiz History
+
+Keep track of your quiz history, including the results, date, and time it took to complete. This feature allows you to monitor your progress and revisit past quizzes.
+
 
 
 
