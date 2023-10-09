@@ -1,5 +1,5 @@
 # Know It All!
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text]([https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png](https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonduck.com%2Ficons%2F11295%2Fnext-js&psig=AOvVaw2yBqk9FBcElHL7T9GHWRZ_&ust=1696964269939000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNCPyo7g6YEDFQAAAAAdAAAAABAE) "Logo Title Text 1")
 
 ## Table of Contents
 1. [Introduction](#introduction)
