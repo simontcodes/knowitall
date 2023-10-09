@@ -37,10 +37,19 @@ Provide instructions for setting up and using your project.
 
 ### Installation <a name="installation"></a>
 
-List step-by-step instructions on how to install your project. Include any prerequisites and dependencies that need to be installed beforehand.
+
 
 ```bash
 # Example installation steps
 $ git clone https://github.com/simontcodes/knowitall.git
-$ cd yourproject
+$ cd knowitall
 $ npm install
+
+Usage <a name="usage"></a>
+
+```bash
+# Example usage
+$ npm run dev
+
+
+
