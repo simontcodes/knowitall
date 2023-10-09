@@ -1,7 +1,7 @@
 # Know It All!
 ![alt text][logo]
 
-[logo]: https://static-00.iconduck.com/assets.00/next-js-icon-256x256-6j7ddke7.png "Logo Title Text 2"
+[logo]: https://github.com/simontcodes/knowitall/blob/main/library%20icons.png?raw=true "Logo Title Text 2"
 
 ## Table of Contents
 1. [Introduction](#introduction)
