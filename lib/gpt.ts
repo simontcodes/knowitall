@@ -25,6 +25,7 @@ export async function strict_output(
 		answer: string;
 	}[]
 > {
+	console.log(user_prompt)
 	// if the user input is in a list, we also process the output as a list of json
 	const list_input: boolean = Array.isArray(user_prompt);
 	// if the output format contains dynamic elements of < or >, then add to the prompt to handle dynamic elements
@@ -68,6 +69,8 @@ export async function strict_output(
 				{ role: "user", content: user_prompt.toString() },
 			],
 		});
+
+		console.log(response)
 
 		let res: string =
 			response.data.choices[0].message?.content?.replace(/'/g, '"') ?? "";
