@@ -57,6 +57,7 @@ export async function strict_output(
 			output_format_prompt += `\nGenerate an array of json, one json for each input element.`;
 		}
 
+		console.log("before chat completion function")
 		// Use OpenAI to get a response
 		const response = await openai.createChatCompletion({
 			temperature: temperature,
