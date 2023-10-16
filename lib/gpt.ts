@@ -25,7 +25,6 @@ export async function strict_output(
 		answer: string;
 	}[]
 > {
-	console.log(user_prompt + "inside strict output function")
 	// if the user input is in a list, we also process the output as a list of json
 	const list_input: boolean = Array.isArray(user_prompt);
 	// if the output format contains dynamic elements of < or >, then add to the prompt to handle dynamic elements
@@ -57,7 +56,7 @@ export async function strict_output(
 			output_format_prompt += `\nGenerate an array of json, one json for each input element.`;
 		}
 
-		console.log("before chat completion function")
+		console.log(openai.createChatCompletion)
 		// Use OpenAI to get a response
 		const response = await openai.createChatCompletion({
 			temperature: temperature,
