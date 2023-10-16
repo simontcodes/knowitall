@@ -15,6 +15,8 @@ export const GET = async (req: Request, res: Response) => {
 export const POST = async (req: Request, res: Response) => {
     try {
         const body = await req.json()
+
+        console.log(body)
     const {amount, topic, type} = quizCreationSchema.parse(body)
     let questions: any
     if (type === "open_ended") {
