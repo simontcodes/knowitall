@@ -26,6 +26,8 @@ export const POST = async (req: Request, res: Response) => {
             question: 'question',
             answer: 'answer with a max of 15 words'
         })
+
+        console.log(questions)
     } else if(type === 'mcq') {
         questions = await strict_output(
             "You are a helpful AI that is able to generate mcq quiestions and answers, the length of each answer should not exceed 15 words",
@@ -38,6 +40,7 @@ export const POST = async (req: Request, res: Response) => {
                 option3: '3rd option with max lenght of 15 words',
             }
         )
+        console.log(questions)
     }
     return NextResponse.json({
         Questions: questions
