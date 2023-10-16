@@ -25,7 +25,7 @@ export async function strict_output(
 		answer: string;
 	}[]
 > {
-	console.log(user_prompt)
+	console.log(user_prompt + "inside strict output function")
 	// if the user input is in a list, we also process the output as a list of json
 	const list_input: boolean = Array.isArray(user_prompt);
 	// if the output format contains dynamic elements of < or >, then add to the prompt to handle dynamic elements

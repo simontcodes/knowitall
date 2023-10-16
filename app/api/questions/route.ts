@@ -40,7 +40,7 @@ export const POST = async (req: Request, res: Response) => {
                 option3: '3rd option with max lenght of 15 words',
             }
         )
-        console.log(questions)
+        console.log(questions + "inside questions endpoint")
     }
     return NextResponse.json({
         Questions: questions
